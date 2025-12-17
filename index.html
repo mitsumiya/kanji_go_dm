@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>漢字でGO（画像＋テキスト版）</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 上部固定ステータス -->
+<div id="statusBar">
+  <div id="statusBar-inner">
+    <div class="statusItem" id="questionCount">問題：1 / 10</div>
+    <div class="statusItem" id="missCount">ミス: 0 / 5</div>
+    <div class="statusItem" id="timer">残り時間：15</div>
+  </div>
+</div>
+
+
+  <div id="gameArea">
+
+    <!-- 難易度選択 -->
+    <div id="difficultySelect">
+      <h2>難易度を選択</h2>
+      <p class="howto">
+        カード画像と漢字を見て<br>
+        読みをひらがなで入力してください。
+      </p>
+      <button onclick="startGame('easy')">かんたん</button>
+      <button onclick="startGame('normal')">ふつう</button>
+      <button onclick="startGame('hard')">むずかしい</button>
+    </div>
+
+    <!-- ゲーム画面 -->
+    <div id="gameScreen" class="hidden">
+
+      <!-- フリガナ（正解時） -->
+      <div id="furigana" class="hidden"></div>
+
+      <!-- カード画像 -->
+      <img id="cardImage" class="card-image" src="" alt="カード画像">
+
+      <!-- 画像下テキスト -->
+      <div id="cardText"></div>
+
+      <!-- 入力 -->
+      <input
+        type="text"
+        id="answerInput"
+        placeholder="ひらがなで入力"
+        autocomplete="off"
+      />
+      <button id="submitBtn">決定（Enter）</button>
+
+      <p id="message"></p>
+    </div>
+
+    <!-- 結果 -->
+    <div id="resultScreen" class="hidden">
+      <h2>結果</h2>
+      <p id="resultText"></p>
+      <button onclick="location.reload()">もう一度遊ぶ</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
