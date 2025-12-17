@@ -162,3 +162,4 @@ submitBtn.addEventListener("click", checkAnswer);
 answerInput.addEventListener("keydown", (e) => {
   if (e.key === "Enter") checkAnswer();
 });
+
